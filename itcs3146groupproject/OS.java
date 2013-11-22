@@ -5,13 +5,15 @@ import java.util.ListIterator;
 
 public class OS {
 	LinkedList waitingJobs;
+   private Master MasterProcessor;
 	
-	public OS(LinkedList waitingJobs) {
+	public OS(LinkedList waitingJobs, Master MasterProcessor) {
 		this.waitingJobs = waitingJobs;
+      this.MasterProcessor = MasterProcessor;
 		
-		FixedPageMemoryManager m = new FixedPageMemoryManager(25, 100);
+		//FixedPageMemoryManager m = new FixedPageMemoryManager(25, 100);
 		
-		while(!waitingJobs.isEmpty() && m.hasJobs()) {
+		/*while(!waitingJobs.isEmpty()) //&& m.hasJobs()) {
 			ListIterator<Job> jobIterator = waitingJobs.listIterator();
 			
 			while (jobIterator.hasNext()) {
@@ -21,6 +23,6 @@ public class OS {
 					m.addJob(j);
 				}
 			}
-		}
+		}*/
 	}
 }

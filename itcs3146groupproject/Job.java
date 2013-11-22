@@ -1,6 +1,6 @@
 package itcs3146groupproject;
 
-public class Job implements Comparable<Job> {
+public class Job implements Comparable<Job>, AbstractJob{
 	private static int totalNumberOfJobs = 0;
 	private int id,
 		size,
